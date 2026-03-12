@@ -1,0 +1,22 @@
+USER PROMPT: Build a website about space cybersecurity which tells what it is and lists all the sources where we can get information about space cybersecurity
+______________________________________________________________________
+
+
+FRONTEND PAGES DECIDED:
+[
+  {
+    "name": "Home",
+    "route": "/",
+    "description": "Main landing page introducing space cybersecurity."
+  },
+  {
+    "name": "About",
+    "route": "/about",
+    "description": "Detailed explanation of what space cybersecurity is."
+  },
+  {
+    "name": "Resources",
+    "route": "/resources",
+    "description": "A comprehensive list of sources for space cybersecurity information."
+  }
+]
