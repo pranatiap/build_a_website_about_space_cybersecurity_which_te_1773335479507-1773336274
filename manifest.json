@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "{{PROJECT_ID}}",
+  "projectName": "{{PROJECT_NAME}}",
+  "generatedAt": "{{GENERATED_AT}}",
+  "lastModified": "{{LAST_MODIFIED}}",
+  "projectType": "{{PROJECT_TYPE}}",
+  "frontend": {
+    "framework": "react",
+    "language": "typescript",
+    "baseUrl": "http://localhost:5174",
+    "pages": {
+      "{{PageName}}.tsx": {
+        "path": "frontend/src/pages/{{PageName}}.tsx",
+        "route": "{{/route-path}}",
+        "purpose": "{{what this page does}}",
+        "apiCalls": [
+          {
+            "endpoint": "{{/api/endpoint}}",
+            "method": "{{GET|POST|PUT|DELETE}}",
+            "triggeredBy": "{{on mount | on form submit | on button click}}",
+            "requestPayload": {},
+            "responseUsed": []
+          }
+        ],
+        "dependsOnPages": [],
+        "lastModified": "{{TIMESTAMP}}"
+      },
+      "Home.tsx": {
+        "path": "src/pages/Home.tsx",
+        "route": "/",
+        "purpose": "Main landing page introducing space cybersecurity.",
+        "lastModified": "2026-03-12T17:12:01.458766+00:00"
+      },
+      "About.tsx": {
+        "path": "src/pages/About.tsx",
+        "route": "/about",
+        "purpose": "Detailed explanation of what space cybersecurity is.",
+        "lastModified": "2026-03-12T17:12:34.174550+00:00"
+      },
+      "Resources.tsx": {
+        "path": "src/pages/Resources.tsx",
+        "route": "/resources",
+        "purpose": "A comprehensive list of sources for space cybersecurity information.",
+        "lastModified": "2026-03-12T17:12:56.278403+00:00"
+      }
+    }
+  },
+  "backend": {
+    "framework": "fastapi",
+    "language": "python",
+    "baseUrl": "http://localhost:8056",
+    "database": {
+      "type": "sqlite",
+      "file": "backend/database.db",
+      "ormFile": "backend/database.py"
+    },
+    "models": {
+      "{{ModelName}}": {
+        "file": "backend/models/{{model_name}}.py",
+        "tableName": "{{table_name}}",
+        "fields": {
+          "id": {
+            "type": "Integer",
+            "primaryKey": true,
+            "autoIncrement": true
+          },
+          "{{fieldName}}": {
+            "type": "{{String|Integer|Boolean|Float|DateTime}}",
+            "nullable": false,
+            "unique": false,
+            "foreignKey": null
+          }
+        },
+        "relationships": {
+          "{{relatedModel}}": "{{one-to-many|many-to-one|many-to-many}}"
+        },
+        "usedInRoutes": []
+      }
+    },
+    "routes": {
+      "{{/api/endpoint}}": {
+        "file": "backend/routes/{{route_file}}.py",
+        "method": "{{GET|POST|PUT|DELETE}}",
+        "purpose": "{{what this route does}}",
+        "requestBody": {
+          "{{fieldName}}": "{{type}}"
+        },
+        "responseSchema": {
+          "{{fieldName}}": "{{type}}"
+        },
+        "usesModels": [],
+        "requiresAuth": false
+      }
+    }
+  },
+  "crossLinks": {
+    "{{/api/endpoint}}": {
+      "consumedBy": [],
+      "usesModels": []
+    }
+  }
+}
